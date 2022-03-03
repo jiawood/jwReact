@@ -1,0 +1,20 @@
+{
+  "name": "jwReact",
+  "version": "1.0.0",
+  "description": "实现一个简单的react 参考：[build your own react](https://pomb.us/build-your-own-react/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiawood/jwReact.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiawood/jwReact/issues"
+  },
+  "homepage": "https://github.com/jiawood/jwReact#readme"
+}

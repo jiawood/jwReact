@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jiawood/jwReact#readme",
   "devDependencies": {
+    "@babel/preset-react": "^7.16.7",
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
     "husky": "^7.0.4"

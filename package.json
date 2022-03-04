@@ -1,5 +1,5 @@
 {
-  "name": "jwReact",
+  "name": "jw-react",
   "version": "1.0.0",
   "description": "实现一个简单的react 参考：[build your own react](https://pomb.us/build-your-own-react/)",
   "main": "index.js",
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/jiawood/jwReact/issues"
   },
-  "homepage": "https://github.com/jiawood/jwReact#readme"
+  "homepage": "https://github.com/jiawood/jwReact#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "husky": "^7.0.4"
+  }
 }

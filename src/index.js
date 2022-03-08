@@ -1,15 +1,14 @@
+/* eslint react/react-in-jsx-scope:0 */
 function createElement(type, props, ...children) {
   return {
     type,
     props: {
       ...props,
-      children: children.map(child =>
-        typeof child === "object"
-          ? child
-          : createTextElement(child)
+      children: children.map((child) =>
+        typeof child === "object" ? child : createTextElement(child)
       ),
     },
-  }
+  };
 }
 
 function createTextElement(text) {
@@ -19,21 +18,39 @@ function createTextElement(text) {
       nodeValue: text,
       children: [],
     },
-  }
+  };
+}
+
+function render(element, container) {
+  const dom =
+    element.type === "TEXT_ELEMENT"
+      ? document.createTextNode("")
+      : document.createElement(element.type);
+
+  const isProperty = (key) => key !== "children";
+
+  Object.keys(element.props)
+    .filter(isProperty)
+    .forEach((name) => {
+      dom[name] = element.props[name];
+    });
+
+  element.props.children.forEach((child) => render(child, dom));
+  container.appendChild(dom);
 }
 
 const jwReact = {
-  createElement
-}
+  createElement,
+  render,
+};
 
-function Counter() {
-  return (
-    <h1 title="test">
-      <div>
-        <span>this</span>
-      </div>
-    </h1>
-  )
-}
+const element = (
+  <h1 title="test">
+    <div>
+      <span>this</span>
+    </div>
+  </h1>
+);
 
-const elment = Counter()
+const root = document.getElementById("root");
+render(element, root);
